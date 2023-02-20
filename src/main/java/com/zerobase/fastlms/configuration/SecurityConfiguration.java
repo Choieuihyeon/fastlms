@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -32,6 +33,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     UserAuthenticationFailureHandler getFailureHandler() {
         return new UserAuthenticationFailureHandler();
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+
+        web.ignoring().antMatchers("/favicon.ico", "/files/**");
+        super.configure(web);
     }
 
     @Override
