@@ -10,7 +10,8 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossOrigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossOrigin="anonymous"></script>
     <script>
         $(function () {
 
@@ -41,7 +42,7 @@
 
                     // 정상적일때
                     alert(' 강좌가 정상적으로 신청되었습니다.');
-                    location.href='/';
+                    location.href = '/';
 
                 }).catch(function (err) {
                     console.log(err);
@@ -72,8 +73,8 @@
     <div>
         <form id="submitForm" method="post">
             <input type="hidden" name="id" th:value="${detail.id}"/>
-        <button type="submit">수강신청</button>
-        <a href="/course">강좌 목록</a>
+            <button type="submit">수강신청</button>
+            <a href="/course">강좌 목록</a>
         </form>
     </div>
 </div>

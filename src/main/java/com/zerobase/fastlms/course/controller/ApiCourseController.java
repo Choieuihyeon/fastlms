@@ -16,7 +16,7 @@ import java.security.Principal;
 
 @RequiredArgsConstructor
 @RestController
-public class ApiCourseController extends BaseController{
+public class ApiCourseController extends BaseController {
 
     private final CourseService courseService;
     private final CategoryService categoryService;
@@ -37,7 +37,6 @@ public class ApiCourseController extends BaseController{
         ResponseResult responseResult = new ResponseResult(true);
         return ResponseEntity.ok().body(responseResult);
     }
-
 
 
 }

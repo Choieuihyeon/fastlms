@@ -1,9 +1,7 @@
 package com.zerobase.fastlms.course.controller;
 
-import com.zerobase.fastlms.admin.service.CategoryService;
 import com.zerobase.fastlms.course.dto.CourseDto;
 import com.zerobase.fastlms.course.dto.TakeCourseDto;
-import com.zerobase.fastlms.course.model.CourseParam;
 import com.zerobase.fastlms.course.model.ServiceResult;
 import com.zerobase.fastlms.course.model.TakeCourseParam;
 import com.zerobase.fastlms.course.service.CourseService;
@@ -20,7 +18,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
-public class AdminTakeCourseController extends BaseController{
+public class AdminTakeCourseController extends BaseController {
 
     private final CourseService courseService;
     private final TakeCourseService takeCourseService;
@@ -61,10 +59,6 @@ public class AdminTakeCourseController extends BaseController{
 
         return "redirect:/admin/takecourse/list.do";
     }
-
-
-
-
 
 
 }

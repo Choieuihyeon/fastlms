@@ -65,7 +65,7 @@ public class CourseDto {
         }
 
         List<CourseDto> courseList = new ArrayList<>();
-        for(Course x: courses) {
+        for (Course x : courses) {
             courseList.add(CourseDto.of(x));
         }
         return courseList;

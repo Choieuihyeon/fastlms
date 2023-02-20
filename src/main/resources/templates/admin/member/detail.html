@@ -8,7 +8,8 @@
             width: 100%;
             border-collapse: collapse;
         }
-        .detail table th, .detail table td{
+
+        .detail table th, .detail table td {
             border: solid 1px #000;
         }
     </style>
@@ -24,9 +25,9 @@
         <tbody>
         <tr>
             <th>아이디</th>
-                <td>
-                    <p th:text="${member.userId}"></p>
-                </td>
+            <td>
+                <p th:text="${member.userId}"></p>
+            </td>
         </tr>
         <tr>
             <th>이름</th>
@@ -57,7 +58,7 @@
             <td>
                 <p th:text="${member.adminYn}"></p>
             </td>
-            <tr>
+        <tr>
             <th>회원 상태</th>
             <td>
                 <p>
@@ -66,11 +67,11 @@
                 <div>
                     <form method="post" action="/admin/member/status.do">
                         <input th:value="${member.userId}" type="hidden" name="userId"/>
-                <select name="userStatus">
-                    <option value="REQ">가입승인중</option>
-                    <option value="ING">정상이용중</option>
-                    <option value="STOP">정지중</option>
-                </select>
+                        <select name="userStatus">
+                            <option value="REQ">가입승인중</option>
+                            <option value="ING">정상이용중</option>
+                            <option value="STOP">정지중</option>
+                        </select>
                         <button type="submit">상태 변경</button>
                     </form>
                 </div>

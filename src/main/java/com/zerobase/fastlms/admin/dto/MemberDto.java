@@ -60,6 +60,7 @@ public class MemberDto {
                 .zipcode(member.getZipcode())
                 .addr(member.getAddr())
                 .addrDetail(member.getAddrDetail())
+                //.lastLogin(member.getLastLogin())
                 .build();
     }
 
@@ -74,4 +75,14 @@ public class MemberDto {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
         return udtDt != null ? udtDt.format(formatter) : "";
     }
+
+
+    /*
+    public String getLastLoginText() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
+        return lastLogin != null ? lastLogin.format(formatter) : "";
+    }
+
+     */
 }

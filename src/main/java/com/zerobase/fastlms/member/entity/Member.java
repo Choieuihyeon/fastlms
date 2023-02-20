@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @Data
 @Entity
-public class Member implements MemberCode{
+public class Member implements MemberCode {
     @Id
     private String userId;
 
@@ -38,6 +38,7 @@ public class Member implements MemberCode{
     private String zipcode;
     private String addr;
     private String addrDetail;
+
 
     // 관리자 여부를 지정할꺼냐?
     // 회원에 따른 ROLE을 지정할꺼냐???

@@ -66,7 +66,6 @@ public class MainController {
     public String errorDenied() {
 
 
-
         return "error/denied";
     }
 

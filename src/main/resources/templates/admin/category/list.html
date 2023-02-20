@@ -8,7 +8,8 @@
             width: 100%;
             border-collapse: collapse;
         }
-        .list table th, .list table td{
+
+        .list table th, .list table td {
             border: solid 1px #000;
         }
 
@@ -22,7 +23,8 @@
         }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
 
@@ -78,21 +80,21 @@
 
     <table>
         <thead>
-            <tr>
-                <th> ID </th>
-                <th>
-                    카테고리명
-                </th>
-                <th>
-                    순서
-                </th>
-                <th>
-                    사용 여부
-                </th>
-                <th>
-                    비고
-                </th>
-            </tr>
+        <tr>
+            <th> ID</th>
+            <th>
+                카테고리명
+            </th>
+            <th>
+                순서
+            </th>
+            <th>
+                사용 여부
+            </th>
+            <th>
+                비고
+            </th>
+        </tr>
         </thead>
         <tbody>
         <tr th:each="x : ${list}">
@@ -107,7 +109,8 @@
                 <input th:value="${x.sortValue}" type="text" name="sortValue"/>
             </td>
             <td>
-                <input th:checked="${x.usingYn}" type="checkbox" th:id="'usingYn_' + ${x.id}" th:name="'usingYn_' + ${x.id}" value="true"/>
+                <input th:checked="${x.usingYn}" type="checkbox" th:id="'usingYn_' + ${x.id}"
+                       th:name="'usingYn_' + ${x.id}" value="true"/>
                 <label th:for="'usingYn_yes_' + ${x.id}">사용</label>
             </td>
             <td>

@@ -24,7 +24,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class CourseServiceImpl implements CourseService{
+public class CourseServiceImpl implements CourseService {
 
     private final CourseRepository courseRepository;
     private final TakeCourseRepository takeCourseRepository;
@@ -39,7 +39,6 @@ public class CourseServiceImpl implements CourseService{
         }
         return null;
     }
-
 
 
     @Override
@@ -103,7 +102,7 @@ public class CourseServiceImpl implements CourseService{
         List<CourseDto> list = courseMapper.selectList(parameter);
         if (!CollectionUtils.isEmpty(list)) {
             int i = 0;
-            for (CourseDto x: list) {
+            for (CourseDto x : list) {
                 x.setTotalCount(totalCount);
                 x.setSeq(totalCount - parameter.getPageStart() - i);
                 i++;
@@ -125,7 +124,7 @@ public class CourseServiceImpl implements CourseService{
         if (idList != null && idList.length() > 0) {
 
             String[] ids = idList.split(",");
-            for(String x: ids) {
+            for (String x : ids) {
                 long id = 0L;
                 try {
                     id = Long.parseLong(x);
@@ -148,7 +147,6 @@ public class CourseServiceImpl implements CourseService{
             List<Course> courseList = courseRepository.findAll();
             return CourseDto.of(courseList);
         }
-
 
 
         Optional<List<Course>> optionalCourses = courseRepository.findByCategoryId(parameter.getCategoryId());

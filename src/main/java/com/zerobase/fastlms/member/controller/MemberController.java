@@ -182,7 +182,7 @@ public class MemberController {
 
         boolean result = false;
         try {
-             result = memberService.resetPassword(parameter.getId(), parameter.getPassword());
+            result = memberService.resetPassword(parameter.getId(), parameter.getPassword());
         } catch (Exception e) {
         }
         model.addAttribute("result", result);
@@ -212,11 +212,6 @@ public class MemberController {
 
         return "redirect:/member/logout";
     }
-
-
-
-
-
 
 
 }

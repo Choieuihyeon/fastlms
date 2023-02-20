@@ -22,7 +22,7 @@ public class PasswordUtils {
         if (plaintext == null || plaintext.length() < 1) {
             return "";
         }
-        return  BCrypt.hashpw(plaintext, BCrypt.gensalt());
+        return BCrypt.hashpw(plaintext, BCrypt.gensalt());
     }
 
 }

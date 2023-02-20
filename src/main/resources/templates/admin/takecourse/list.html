@@ -8,8 +8,9 @@
             width: 100%;
             border-collapse: collapse;
         }
+
         .list table th, .list table td {
-            border:solid 1px #000;
+            border: solid 1px #000;
         }
 
         p.nothing {
@@ -22,7 +23,7 @@
             padding: 10px 0;
         }
 
-        .list  .buttons a,.list  .buttons button {
+        .list .buttons a, .list .buttons button {
             border-width: 0;
             background-color: transparent;
             text-decoration: underline;
@@ -48,23 +49,25 @@
             margin-top: 20px;
             text-align: center;
         }
+
         .pager a.on {
             font-weight: bold;
             color: red;
         }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            $('#searchCourseId').on('change', function() {
+            $('#searchCourseId').on('change', function () {
                 var id = $(this).val();
                 location.href = '?searchCourseId=' + id;
             });
 
 
-            $('.row-buttons button').on('click', function() {
+            $('.row-buttons button').on('click', function () {
 
 
                 var status = $(this).val();
@@ -89,8 +92,9 @@
     </script>
 </head>
 <body>
-<div th:replace="/fragments/layout.html :: fragment-admin-body-menu"></div>
+
 <h1>수강 관리</h1>
+<div th:replace="/fragments/layout.html :: fragment-admin-body-menu"></div>
 
 
 <div class="list">
@@ -100,7 +104,8 @@
             <option value="">전체 강좌</option>
             <option th:each="x : ${courseList}"
                     th:selected="${#strings.equals(param.searchCourseId, x.id)}"
-                    th:value="${x.id}" th:text="${x.subject}">자바 프로그래밍</option>
+                    th:value="${x.id}" th:text="${x.subject}">자바 프로그래밍
+            </option>
         </select>
 
         <p class="total-count">전체 <span th:text="${totalCount}"></span>개</p>
@@ -109,7 +114,7 @@
     <table>
         <thead>
         <tr>
-            <th> NO </th>
+            <th> NO</th>
             <th>
                 등록일
             </th>
@@ -161,7 +166,7 @@
             </td>
         </tr>
         <tr th:if="${#lists.size(list) < 1}">
-            <td colspan="8" >
+            <td colspan="8">
                 <p class="nothing">내용이 없습니다.</p>
             </td>
         </tr>

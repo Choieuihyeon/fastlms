@@ -1,29 +1,22 @@
 package com.zerobase.fastlms.course.service;
 
-import com.zerobase.fastlms.course.dto.CourseDto;
 import com.zerobase.fastlms.course.dto.TakeCourseDto;
-import com.zerobase.fastlms.course.entity.Course;
 import com.zerobase.fastlms.course.entity.TakeCourse;
 import com.zerobase.fastlms.course.entity.TakeCourseCode;
-import com.zerobase.fastlms.course.mapper.CourseMapper;
 import com.zerobase.fastlms.course.mapper.TakeCourseMapper;
-import com.zerobase.fastlms.course.model.*;
-import com.zerobase.fastlms.course.repository.CourseRepository;
+import com.zerobase.fastlms.course.model.ServiceResult;
+import com.zerobase.fastlms.course.model.TakeCourseParam;
 import com.zerobase.fastlms.course.repository.TakeCourseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class TakeCourseServiceImpl implements TakeCourseService{
+public class TakeCourseServiceImpl implements TakeCourseService {
 
     private final TakeCourseRepository takeCourseRepository;
     private final TakeCourseMapper takeCourseMapper;
@@ -37,7 +30,7 @@ public class TakeCourseServiceImpl implements TakeCourseService{
         List<TakeCourseDto> list = takeCourseMapper.selectList(parameter);
         if (!CollectionUtils.isEmpty(list)) {
             int i = 0;
-            for (TakeCourseDto x: list) {
+            for (TakeCourseDto x : list) {
                 x.setTotalCount(totalCount);
                 x.setSeq(totalCount - parameter.getPageStart() - i);
                 i++;

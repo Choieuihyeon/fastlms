@@ -23,18 +23,18 @@ public class CategoryDto {
     //ADD COLUMNS
     int courseCount;
 
-    public static List<CategoryDto> of (List<Category> categories) {
+    public static List<CategoryDto> of(List<Category> categories) {
         if (categories != null) {
             List<CategoryDto> categoryList = new ArrayList<>();
-            for (Category x: categories) {
-               categoryList.add(of(x));
+            for (Category x : categories) {
+                categoryList.add(of(x));
             }
             return categoryList;
         }
         return null;
     }
 
-    public static CategoryDto of (Category category) {
+    public static CategoryDto of(Category category) {
         return CategoryDto.builder()
                 .id(category.getId())
                 .categoryName(category.getCategoryName())

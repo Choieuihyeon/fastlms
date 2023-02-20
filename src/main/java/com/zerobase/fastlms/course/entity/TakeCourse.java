@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @Data
 @Entity
-public class TakeCourse implements TakeCourseCode{
+public class TakeCourse implements TakeCourseCode {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

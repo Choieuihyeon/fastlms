@@ -15,5 +15,4 @@ public class TakeCourseParam extends CommonParam {
     long searchCourseId;
 
 
-
 }
